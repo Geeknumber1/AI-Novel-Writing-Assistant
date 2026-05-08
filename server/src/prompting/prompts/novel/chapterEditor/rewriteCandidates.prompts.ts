@@ -42,6 +42,9 @@ export const chapterEditorRewriteCandidatesPrompt: PromptAsset<
     maxTokensBudget: NOVEL_PROMPT_BUDGETS.chapterEditorRewrite,
   },
   outputSchema: chapterEditorRewriteCandidatesSchema,
+  semanticRetryPolicy: {
+    maxAttempts: 2,
+  },
   structuredOutputHint: {
     mode: "auto",
     note: "返回 2 到 3 个候选改写方案，保持 JSON 稳定。",
